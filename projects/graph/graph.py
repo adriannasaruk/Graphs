@@ -40,7 +40,7 @@ class Graph:
         
         visited = set()
         
-        while q.size > 0:
+        while q.size() > 0:
             v = q.dequeue()
             
             if v not in visited:
@@ -60,7 +60,7 @@ class Graph:
         
         visited = set()
         
-        while s.size > 0:
+        while s.size() > 0:
             v = s.pop()
             
             if v not in visited:
@@ -70,14 +70,13 @@ class Graph:
                 for next_vartex in self.get_neighbors(v):
                     s.push(next_vartex)  # TODO
 
-    def dft_recursive(self, starting_vertex, visited):
+    def dft_recursive(self, starting_vertex, visited = set()):
         """
         Print each vertex in depth-first order
         beginning from starting_vertex.
 
         This should be done using recursion.
         """
-        visited = set()
         visited.add(starting_vertex)
         print(starting_vertex)
 
@@ -101,7 +100,7 @@ class Graph:
         visited = set()
 
         # while the queue is not empty
-        while q.size > 0:
+        while q.size() > 0:
             current = q.dequeue()
             # dequeue the first PATH
             # grab the last vertex from the Path
@@ -145,7 +144,7 @@ class Graph:
         visited = set()
 
         # while the queue is not empty
-        while s.size > 0:
+        while s.size() > 0:
             current = s.pop()
             # dequeue the first PATH
             # grab the last vertex from the Path
