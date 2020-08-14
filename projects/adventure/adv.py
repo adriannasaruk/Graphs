@@ -42,12 +42,7 @@ visited[player.current_room.id] = player.current_room.get_exits()
 current_room = player.current_room.id
 # adding to visited
 visited_room = visited[player.current_room.id]
-# find an escape
-exits = player.current_room.get_exits()
 
-visited_room = visited[player.current_room.id]
-
-visited[player.current_room.id] = player.current_room.get_exits()
 
 
 while len(visited) < len(room_graph) -1:
