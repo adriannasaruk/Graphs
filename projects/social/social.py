@@ -102,18 +102,13 @@ class SocialGraph:
         # !!!! IMPLEMENT ME
 
         while q.size() > 0:
-            # dequeu the first path
             path = q.dequeue()
-            # get last id from path
             current_id = path[-1]
             if current_id not in visited:
                 visited[current_id] = path
                 for friend_id in self.friendships[current_id]:
-                    # copy path
                     path_copy = path.copy()
-                    # append each neighbor
                     path_copy.append(friend_id)
-                    # enqueue
                     q.enqueue(path_copy)
         
         return visited
@@ -121,7 +116,7 @@ class SocialGraph:
 
 if __name__ == '__main__':
     sg = SocialGraph()
-    sg.populate_graph(10, 2)
+    sg.populate_graph(10, 6)
     print(sg.friendships)
     connections = sg.get_all_social_paths(1)
     print(connections)
